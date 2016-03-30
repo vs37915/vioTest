@@ -1,0 +1,80 @@
+Commands that you have to know if you want to use git via the commandline
+
+git status :	
+	Shows the status of the files in current directory according to the repository
+
+git init :		
+	creates a .git repository for the current directory
+
+git add your.file :
+	add your.file to the repository 
+	if you replace your.file with . git add will be done for all files in the direcotry.
+	This excludes the files listed in .gitignore
+
+git checkout your.file:
+	discard the changes you made to your.file and get the last revision from the respository
+
+git commit 
+	commit the files you added by git add to the repository:
+
+	After that vim will be opend and you are asekd to insert a message to your commit.
+	If you want to add a message type "i" and insert your text, then type "ESC" 
+	If you want to close it type :wq, to write and quit vim
+
+git commit -m "Your Message":
+	You can add a message to your commit.
+	Write into the message what changes you did. So it is easier to remind what you did there later
+
+git clone URL:	
+	Download the Repository stored at URL.
+
+git branch your.branch:
+	create a new branch
+
+git branch -d your.branch:
+	remove your.branch from the Repository
+
+git checkout your.branch:
+	get the files from your.branch
+
+git merge your.branch:
+	Try to merge your.branch into your current branch
+
+git	push:
+	Upload your current branch to the Repository you downloaded by git clone
+
+git pull:
+	Download the current files from the online Repositry into your folder
+
+git diff your.File:
+	compare your.File local to the your.File in your Reposiotry and get the differences
+
+git show REVISION:path/to/file
+	prints the file at REVISION. 
+	E.g. "git show HEAD~1:your.file" prints the file from the former revision
+	Or: "git show HEAD@{2016-03-30}:your.file" prints your.file from 2016-03-30
+
+gitk your.file
+	Opens a GUI that shows the history of your.file
+
+tig your.file
+	Opens a Commandline tool for the history of your.file
+	
+
+
+#########################################################################################
+Nice to know informaion:
+
+.gitignore file :
+	You can create a fiel called .gitignore to your directory:
+	There all files are listed that have to be ignored by git.
+	You can also use Reular expressions (*.log will ignore all .log files)
+
+
+Branch:
+	If you create a new branch, all files of your current branch will be added to the new branch. You can work in the new branch like in a new Repository. So if you make changes in the new branch the files in the other branches will not be affected. 
+	You can Merge two branches by git merge your.branch..
+
+	Branches are mostly used when more people have to work on the same files.
+	Then each of them creates a branch and if they made their changes the merge the new files into the master branch.
+
